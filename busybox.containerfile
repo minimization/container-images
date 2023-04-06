@@ -5,7 +5,7 @@ run dnf -y --installroot /output --releasever 37 --setopt=install_weak_deps=fals
 run dnf -y --installroot /output --releasever 37 clean all
 
 run mkdir /output/bin
-run for i in $(/output/usr/sbin/busybox --list); do ln -s /sbin/busybox /output/bin/$i; done
+run for i in $(/output/usr/sbin/busybox --list); do ln -s /usr/sbin/busybox /output/bin/$i; done
 
 from scratch
 copy --from=build-env /output /
